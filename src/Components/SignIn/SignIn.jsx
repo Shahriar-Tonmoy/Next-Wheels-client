@@ -46,8 +46,8 @@ const SignIn = () => {
       <ToastContainer></ToastContainer>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left"></div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20 px-5">
-          <h1 className="text-green-500 text-center text-3xl font-bold">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl border border-orange-400 bg-base-100 py-20 px-5">
+          <h1 className="text-orange-400 text-center text-3xl font-bold">
             Sign in
           </h1>
           <form onSubmit={handleSignIn} className="card-body">
@@ -76,7 +76,7 @@ const SignIn = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-opacity-0 border-green-500 hover:bg-opacity-0 hover:border-green-200">
+              <button className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-green-200">
                 Sign in
               </button>
             </div>
@@ -84,7 +84,7 @@ const SignIn = () => {
           <div className="text-center">
             <p>
               New here?{" "}
-              <Link className="text-green-500 underline" to="/registration">
+              <Link className="text-orange-400 underline" to="/registration">
                 Sign Up
               </Link>
             </p>

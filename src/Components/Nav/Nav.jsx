@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/authProvider";
 const Nav = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  console.log(user);
   const navLinks = (
     <>
       <div className="flex gap-8">

@@ -12,6 +12,7 @@ import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import Error from "./Components/Error/Error.jsx";
 import AddProduct from "./Components/AddProduct/AddProduct.jsx";
 import MyCart from "./Components/MyCart/MyCart.jsx";
+import Products from "./Components/Products/Products.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,11 +32,11 @@ const router = createBrowserRouter([
         path: "SignIn",
         element: <SignIn></SignIn>,
       },
-      // {
-      //   path: "/details/:id",
-      //   element:<PrivateRoute><Details></Details></PrivateRoute>,
-      //   loader: ()=>fetch('../services.json')
-      // },
+      {
+        path: "/products/:id",
+        element:<PrivateRoute><Products></Products></PrivateRoute>,
+        loader: ()=>fetch('../brands.json')
+      },
       {
         path:"add_product",
         element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
