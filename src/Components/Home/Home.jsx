@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Banner from "/Banner.jpg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Brands from "../Brands/Brands";
 
 const Home = () => {
 
@@ -20,14 +21,14 @@ const Home = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="">
             <h1 className="mb-5 text-5xl font-bold text-white ">
-            Your Tech and Gaming Event Nexus
+            Discover Your Next Ride with <span className="text-orange-400">Next Wheels</span>
             </h1>
-            <p className="hidden md:block">Welcome to Your Tech and Gaming Event Nexus, where the worlds of technology and gaming converge in an electrifying fusion of innovation and entertainment. Here, we serve as your portal to a realm where pixels transform into possibilities and gameplay becomes a journey of discovery. Dive into a multitude of events that celebrate the cutting-edge advancements in technology while indulging your passion for gaming. Whether you're a tech enthusiast seeking the latest breakthroughs or a gamer in search of epic challenges and camaraderie, our Nexus is your ultimate destination. Embark on a thrilling adventure where imagination meets reality, and where connections are forged, innovations are unveiled, and experiences are elevated. Join us in celebrating the boundless potential of the digital universe and the exciting future it promises.</p>
+            <p className="hidden md:block">Welcome to Next Wheels, your premier destination for automotive excellence! Whether you're a car enthusiast, a first-time buyer, or looking to upgrade your current vehicle, we've got you covered. With a wide range of top-notch automotive brands and models to choose from, we make finding your dream car a breeze. Our commitment to quality, transparency, and customer satisfaction sets us apart. Explore our showroom, browse our extensive inventory, and let our team of experts guide you towards your next set of wheels. Your journey towards automotive perfection begins here at Next Wheels. Start exploring today!</p>
           </div>
         </div>
       </div>
       <div>
-        {/* <Services></Services> */}
+        <Brands></Brands>
       </div>
       
     </div>
