@@ -5,10 +5,10 @@ import { Outlet } from "react-router-dom";
 
 const Root = () => {
     return (
-        <div>
+           <div className="border-4 border-orange-800 ">
            <Nav></Nav>
-           <Outlet></Outlet>
-           <Footer></Footer>
+           <Outlet ></Outlet>
+           <Footer ></Footer>
         </div>
     );
 };
