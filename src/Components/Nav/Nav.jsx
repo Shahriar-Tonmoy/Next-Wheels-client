@@ -70,16 +70,16 @@ const Nav = () => {
         {user && (
           <div className="flex flex-col md:flex-row gap-7 items-center justify-center">
             <img
-              className="rounded-full h-10 w-10"
+              className="rounded-full border-2 border-orange-400 h-10 w-10"
               src={user.photoURL}
               alt=""
             />
-            <h1>{user.displayName}</h1>
+            <h1 className="text-orange-400 text-xl font-semibold">{user.displayName}</h1>
             <button
               onClick={handleSignOut}
-              className="btn bg-opacity-0 border-green-500 hover:bg-opacity-0 hover:border-green-200"
+              className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200"
             >
-              Log out
+              Sign out
             </button>
           </div>
         )}
