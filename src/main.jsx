@@ -33,9 +33,9 @@ const router = createBrowserRouter([
         element: <SignIn></SignIn>,
       },
       {
-        path: "/products/:id",
+        path: "/products/:name",
         element:<PrivateRoute><Products></Products></PrivateRoute>,
-        loader: ()=>fetch('../brands.json')
+        loader: ()=>fetch('http://localhost:4000/products')
       },
       {
         path:"add_product",

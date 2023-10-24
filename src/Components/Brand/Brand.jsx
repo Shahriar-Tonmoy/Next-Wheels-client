@@ -10,7 +10,7 @@ const Brand = ({ brand }) => {
       }, [])
   return (
     <div >
-      <Link to={`/products/${id}`}>
+      <Link to={`/products/${name}`}>
       <div data-aos="fade-left"
      data-aos-duration="1000" className="  w-max mx-auto ">
         <figure className="px-10 pt-10">
