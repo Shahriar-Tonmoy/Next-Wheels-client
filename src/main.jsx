@@ -13,6 +13,7 @@ import Error from "./Components/Error/Error.jsx";
 import AddProduct from "./Components/AddProduct/AddProduct.jsx";
 import MyCart from "./Components/MyCart/MyCart.jsx";
 import Products from "./Components/Products/Products.jsx";
+import Details from "./Components/Details/Details.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
       {
         path:"add_product",
         element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+      },
+      {
+        path:"/details/:id",
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ()=>fetch('http://localhost:4000/products')
+
       },
       {
         path:"my_cart",
