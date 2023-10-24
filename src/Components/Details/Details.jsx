@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Details = () => {
 
@@ -7,8 +9,26 @@ const Details = () => {
   const selectedProduct = allProducts.find((pro) => pro._id == id);
 
   const { name, image, brandName, type, price, shortDescription, rating } = selectedProduct;
+
+  const handleCart = () =>{
+    fetch('http://localhost:4000/cart_products',{
+      method:'POST',
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(selectedProduct)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if(data.acknowledge == true){
+            toast("Your product is successfully added to cart!!");
+            console.log(data);
+        }
+      })
+  }
   return (
     <div>
+        <ToastContainer></ToastContainer>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
@@ -17,7 +37,7 @@ const Details = () => {
             <p className="py-6">{shortDescription}</p>
             <p className="py-4 text-2xl font-bold">{price}</p>
             <p className="py-4 text-2xl font-bold">{rating}</p>
-            <button className="btn bg-orange-400  text-white border-orange-500 hover:bg-opacity-0 hover:border-orange-500">
+            <button onClick={handleCart} className="btn bg-orange-400  text-white border-orange-500 hover:bg-opacity-0 hover:border-orange-500">
               Add to cart
             </button>
           </div>
