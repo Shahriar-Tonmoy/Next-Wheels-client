@@ -22,7 +22,7 @@ const MyCart = () => {
                 //console.log(data,data.deletedCount)
                 if(data.deletedCount > 0){
                     toast('DELETED SUCCESSFULLY');
-                    const remainingCart = carts.filter(user => user._id !== id);
+                    const remainingCart = carts.filter(pro => pro._id !== id);
                     setCarts(remainingCart);
                 }
             })

@@ -1,37 +1,51 @@
-const AddProduct = () => {
+import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-    const handleNewProduct = e =>{
+const Update = () => {
+
+    const loadedProduct = useLoaderData();
+    const { name, image, brandName, type, price, shortDescription, rating } = loadedProduct;
+    const handleUpdateProduct = e =>{
         e.preventDefault();
         const form  = e.target;
-        const name = form.name.value;
-        const image = form.image.value;
-        const brandName = form.brandName.value;
-        const type = form.type.value;
-        const price = form.price.value;
-        const shortDescription = form.shortDescription.value;
-        const rating = form.rating.value;
-        const newProduct = {name, image, brandName, type, price, shortDescription, rating};
-        console.log(newProduct);
-        form.reset();
-        fetch('http://localhost:4000/products',{
-        method:'POST',
-        headers: {
-        "content-type": "application/json"
-      },
-        body: JSON.stringify(newProduct)
-    })
-      .then(res => res.json())
-      .then(data => console.log(data))
+        const fName = form.name.value;
+        const fImage = form.image.value;
+        const fBrandName = form.brandName.value;
+        const fType = form.type.value;
+        const fPrice = form.price.value;
+        const fShortDescription = form.shortDescription.value;
+        const fRating = form.rating.value;
+        const updatedProduct = {fName, fImage, fBrandName, fType, fPrice, fShortDescription, fRating};
+        console.log(updatedProduct);
+        
+        fetch(`http://localhost:4000/products/${loadedProduct._id}`,{
+            method:'PUT',
+            headers:{
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(updatedProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.modifiedCount > 0){
+                    toast('Updated Successfully!!')
+                }
+            })
+        
     }
+
   return (
     <div className="hero min-h-screen bg-base-200">
+        <ToastContainer></ToastContainer>
       <div className="hero-content flex-col lg:flex-row-reverse w-1/2">
         <div className="text-center lg:text-left"></div>
         <div className="card flex-shrink-0 w-full  shadow-2xl border border-orange-400 bg-base-100 py-20 px-5">
           <h1 className="text-orange-400 text-center text-3xl font-bold">
-            Add New Product
+            Update Product here
           </h1>
-          <form className="card-body" onSubmit={handleNewProduct}>
+          <form className="card-body" onSubmit={handleUpdateProduct}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="form-control">
                 <label className="label">
@@ -42,6 +56,7 @@ const AddProduct = () => {
                   placeholder="Name"
                   className="input input-bordered"
                   name="name"
+                  defaultValue={name}
                   required
                 />
               </div>
@@ -54,6 +69,7 @@ const AddProduct = () => {
                   placeholder="Image URL"
                   className="input input-bordered"
                   name="image"
+                  defaultValue={image}
                   required
                 />
               </div>
@@ -66,6 +82,7 @@ const AddProduct = () => {
                   placeholder="Brand Name"
                   className="input input-bordered"
                   name="brandName"
+                  defaultValue={brandName}
                   required
                 />
               </div>
@@ -78,6 +95,7 @@ const AddProduct = () => {
                   placeholder="Type"
                   className="input input-bordered"
                   name="type"
+                  defaultValue={type}
                   required
                 />
               </div>
@@ -90,6 +108,7 @@ const AddProduct = () => {
                   placeholder="Price"
                   className="input input-bordered"
                   name="price"
+                  defaultValue={price}
                   required
                 />
               </div>
@@ -102,6 +121,7 @@ const AddProduct = () => {
                   placeholder="Short description"
                   className="input input-bordered"
                   name="shortDescription"
+                  defaultValue={shortDescription}
                   required
                 />
               </div>
@@ -114,13 +134,14 @@ const AddProduct = () => {
                   placeholder="Rating"
                   className="input input-bordered"
                   name="rating"
+                  defaultValue={rating}
                   required
                 />
               </div>
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200">
-                Add 
+                Update
               </button>
             </div>
           </form>
@@ -134,4 +155,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default Update;

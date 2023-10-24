@@ -7,7 +7,8 @@ const Details = () => {
   const allProducts = useLoaderData();
   const { id } = useParams();
   const selectedProduct = allProducts.find((pro) => pro._id == id);
-
+  
+  const {_id, ...newSelectedPro} = selectedProduct
   const { name, image, brandName, type, price, shortDescription, rating } = selectedProduct;
 
   const handleCart = () =>{
@@ -16,7 +17,7 @@ const Details = () => {
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify(selectedProduct)
+      body: JSON.stringify(newSelectedPro)
     })
       .then(res => res.json())
       .then(data => {
