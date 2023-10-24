@@ -18,8 +18,8 @@ const Product = ({ product }) => {
         <p className="font-semibold">Price - {price}</p>
         <p className="font-semibold">Rating - {rating}</p>
         <div className="card-actions justify-end">
-          <Link to={`/details/${_id}`}><button className="btn bg-orange-400 text-white hover:bg-orange-400">Details</button></Link>
-          <button className="btn bg-orange-400 text-white hover:bg-orange-400">Update</button>
+          <Link to={`/details/${_id}`}><button className="btn bg-orange-400 text-white hover:bg-orange-500">Details</button></Link>
+          <button className="btn bg-orange-400 text-white hover:bg-orange-500">Update</button>
         </div>
       </div>
     </div>

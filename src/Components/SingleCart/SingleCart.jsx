@@ -1,4 +1,4 @@
-const SingleCart = ({ product }) => {
+const SingleCart = ({ product, handleDelete }) => {
     const { _id, name, image, brandName, type, price, shortDescription, rating } = product;
 
   return (
@@ -13,7 +13,7 @@ const SingleCart = ({ product }) => {
         <h2 className="card-title text-orange-400 font-semibold">{name}</h2>
         <p className="font-extrabold">{brandName}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Delete</button>
+          <button onClick={()=>handleDelete(_id)} className="btn bg-orange-400 text-white hover:bg-orange-400">Delete</button>
         </div>
       </div>
     </div>

@@ -20,9 +20,9 @@ const Details = () => {
     })
       .then(res => res.json())
       .then(data => {
-        if(data.acknowledge == true){
+        console.log(data);
+        if(data){
             toast("Your product is successfully added to cart!!");
-            console.log(data);
         }
       })
   }
@@ -37,7 +37,7 @@ const Details = () => {
             <p className="py-6">{shortDescription}</p>
             <p className="py-4 text-2xl font-bold">{price}</p>
             <p className="py-4 text-2xl font-bold">{rating}</p>
-            <button onClick={handleCart} className="btn bg-orange-400  text-white border-orange-500 hover:bg-opacity-0 hover:border-orange-500">
+            <button onClick={handleCart} className="btn bg-orange-400  text-white hover:bg-orange-500">
               Add to cart
             </button>
           </div>
