@@ -39,7 +39,7 @@ const Update = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
         <ToastContainer></ToastContainer>
-      <div className="hero-content flex-col lg:flex-row-reverse w-1/2">
+      <div className="hero-content flex-col lg:flex-row-reverse w-full">
         <div className="text-center lg:text-left"></div>
         <div className="card flex-shrink-0 w-full  shadow-2xl border border-orange-400 bg-base-100 py-20 px-5">
           <h1 className="text-orange-400 text-center text-3xl font-bold">
@@ -140,7 +140,7 @@ const Update = () => {
               </div>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200">
+              <button className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200 w-[30%] mx-auto">
                 Update
               </button>
             </div>

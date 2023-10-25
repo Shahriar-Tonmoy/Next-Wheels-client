@@ -3,6 +3,8 @@ import Banner from "/Banner.jpg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Brands from "../Brands/Brands";
+import FAQ from "../FAQ/FAQ";
+
 
 const Home = () => {
 
@@ -14,7 +16,7 @@ const Home = () => {
       <div
         className="hero h-[400px] md:h-[600px]"
         style={{
-          backgroundImage: `url(${Banner})`,
+          backgroundImage: "url('https://i.ibb.co/1bvQ0GF/11125.jpg')",
         }}
       >
         <div className="hero-overlay bg-black bg-opacity-60"></div>
@@ -29,6 +31,12 @@ const Home = () => {
       </div>
       <div>
         <Brands></Brands>
+      </div>
+      <div className="container mx-auto mb-32" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+        <h1 className="text-center text-5xl font-bold mb-16 text-orange-400">Most Asked Questions</h1>
+        <FAQ></FAQ>
       </div>
       
     </div>

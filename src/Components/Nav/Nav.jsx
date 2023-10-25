@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Nav.css";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/authProvider";
-const Nav = () => {
+const Nav = ({handleToggle}) => {
   const { user, signOutUser } = useContext(AuthContext);
   console.log(user);
   const navLinks = (
@@ -13,10 +13,10 @@ const Nav = () => {
         </NavLink>
 
         <NavLink className="text-lg font-semibold" to="/add_product">
-              Add Product
+          Add Product
         </NavLink>
         <NavLink className="text-lg font-semibold" to="/my_cart">
-              My Cart
+          My Cart
         </NavLink>
 
         {!user && (
@@ -31,6 +31,8 @@ const Nav = () => {
   const handleSignOut = () => {
     signOutUser();
   };
+
+  
 
   return (
     <div className="navbar bg-base-100 container mx-auto">
@@ -70,12 +72,23 @@ const Nav = () => {
       <div className="navbar-end">
         {user && (
           <div className="flex flex-col md:flex-row gap-7 items-center justify-center">
+            <button className="btn btn-square btn-ghost">
+              <label className="swap swap-rotate w-12 h-12">
+                <input type="checkbox" onChange={handleToggle} />
+                {/* light theme sun image */}
+                <img src="https://i.ibb.co/hdVnsb0/sun.png" alt="light" className="w-8 h-8 swap-on" />
+                {/* dark theme moon image */}
+                <img src="https://i.ibb.co/tYvK2gM/moon2.png" alt="dark" className="w-8 h-8 swap-off" />
+              </label>
+            </button>
             <img
               className="rounded-full border-2 border-orange-400 h-10 w-10"
               src={user.photoURL}
               alt=""
             />
-            <h1 className="text-orange-400 text-xl font-semibold">{user.displayName}</h1>
+            <h1 className="text-orange-400 text-xl font-semibold">
+              {user.displayName}
+            </h1>
             <button
               onClick={handleSignOut}
               className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200"

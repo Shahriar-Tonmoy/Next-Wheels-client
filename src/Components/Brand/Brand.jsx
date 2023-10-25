@@ -11,14 +11,14 @@ const Brand = ({ brand }) => {
   return (
     <div >
       <Link to={`/products/${name}`}>
-      <div data-aos="fade-left"
-     data-aos-duration="1000" className="  w-max mx-auto ">
-        <figure className="px-10 pt-10">
+      <div data-aos="fade-right"
+     data-aos-duration="1000" className="  md:w-max mx-auto ">
+        <figure className="px-10 pt-10 ">
           <img
             
             src={image}
             alt="Shoes"
-            className="rounded-xl h-40 w-full"
+            className="rounded-xl h-40 md:w-full mx-auto"
           />
         </figure>
         <div className="card-body items-center text-center">

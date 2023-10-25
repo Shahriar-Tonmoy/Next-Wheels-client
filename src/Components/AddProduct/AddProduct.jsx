@@ -1,31 +1,38 @@
 const AddProduct = () => {
-
-    const handleNewProduct = e =>{
-        e.preventDefault();
-        const form  = e.target;
-        const name = form.name.value;
-        const image = form.image.value;
-        const brandName = form.brandName.value;
-        const type = form.type.value;
-        const price = form.price.value;
-        const shortDescription = form.shortDescription.value;
-        const rating = form.rating.value;
-        const newProduct = {name, image, brandName, type, price, shortDescription, rating};
-        console.log(newProduct);
-        form.reset();
-        fetch('http://localhost:4000/products',{
-        method:'POST',
-        headers: {
-        "content-type": "application/json"
+  const handleNewProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const image = form.image.value;
+    const brandName = form.brandName.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const shortDescription = form.shortDescription.value;
+    const rating = form.rating.value;
+    const newProduct = {
+      name,
+      image,
+      brandName,
+      type,
+      price,
+      shortDescription,
+      rating,
+    };
+    console.log(newProduct);
+    form.reset();
+    fetch("http://localhost:4000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-        body: JSON.stringify(newProduct)
+      body: JSON.stringify(newProduct),
     })
-      .then(res => res.json())
-      .then(data => console.log(data))
-    }
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse w-1/2">
+      <div className="hero-content flex-col lg:flex-row-reverse w-full">
         <div className="text-center lg:text-left"></div>
         <div className="card flex-shrink-0 w-full  shadow-2xl border border-orange-400 bg-base-100 py-20 px-5">
           <h1 className="text-orange-400 text-center text-3xl font-bold">
@@ -119,8 +126,8 @@ const AddProduct = () => {
               </div>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200">
-                Add 
+              <button className="btn bg-opacity-0 border-orange-400 hover:bg-opacity-0 hover:border-orange-200 w-[20%] mx-auto">
+                Add
               </button>
             </div>
           </form>
