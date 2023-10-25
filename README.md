@@ -19,6 +19,6 @@ On nav-bar there is an option to see user's cart which is "My cart", by clicking
 User can add a new product from "Add Product" section on nav-bar
 
 
-[website](https://brand-website-31e2e.web.app/)
+[https://brand-website-31e2e.web.app/](https://brand-website-31e2e.web.app/)
 
 
