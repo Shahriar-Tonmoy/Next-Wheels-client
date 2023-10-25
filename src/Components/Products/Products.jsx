@@ -50,14 +50,23 @@ const Products = () => {
       <div data-src="https://i.ibb.co/bL6HTMv/race-car-mclaren-p1-gtr.jpg" />
     </AwesomeSlider>
   );
+  const koenigsegg = (
+    <AwesomeSlider className="h-96">
+      <div data-src="https://i.ibb.co/Y25ZVhV/Koenigsegg-One-1-Goodwood-Festival-Of-Speed-2014-001-1200x800.jpg" />
+      <div data-src="https://i.ibb.co/jVJF3Lv/bd0be717408483-562b98fcb2b8a.jpg" />
+      <div data-src="https://i.ibb.co/2nFT0hn/desktop-wallpaper-koenigsegg-ccxr-koenigsegg-ccr.jpg" />
+    </AwesomeSlider>
+  );
 
   return (
     <div>
+        <h1 className="text-center text-orange-400 font-bold text-6xl my-10">{name}</h1>
       {name == "Porsche" && Porsche}
       {name == "Ferrari" && Ferrari}
       {name == "Lamborghini" && Lamborghini}
       {name == "Bugatti" && Bugatti}
       {name == "McLaren" && mcLaren}
+      {name == "Koenigsegg" && koenigsegg}
       
 
       <div className="mt-32 mb-32">
