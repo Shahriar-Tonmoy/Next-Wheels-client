@@ -20,7 +20,7 @@ const AddProduct = () => {
     };
     console.log(newProduct);
     form.reset();
-    fetch("http://localhost:4000/products", {
+    fetch("https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

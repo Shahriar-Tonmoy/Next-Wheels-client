@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/products/:name",
         element:<PrivateRoute><Products></Products></PrivateRoute>,
-        loader: ()=>fetch('http://localhost:4000/products')
+        loader: ()=>fetch('https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/products')
       },
       {
         path:"add_product",
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path:"/details/:id",
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ()=>fetch('http://localhost:4000/products')
+        loader: ()=>fetch('https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/products')
 
       },
       {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       {
         path:"/update/:id",
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:4000/products/${params.id}`)
+        loader: ({params}) => fetch(`https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/products/${params.id}`)
       }
     ]
   },

@@ -19,7 +19,7 @@ const Update = () => {
         const updatedProduct = {fName, fImage, fBrandName, fType, fPrice, fShortDescription, fRating};
         console.log(updatedProduct);
         
-        fetch(`http://localhost:4000/products/${loadedProduct._id}`,{
+        fetch(`https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/products/${loadedProduct._id}`,{
             method:'PUT',
             headers:{
                 'content-type': "application/json"

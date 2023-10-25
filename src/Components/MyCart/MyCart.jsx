@@ -8,13 +8,13 @@ const MyCart = () => {
     const [carts, setCarts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:4000/cart_products")
+        fetch("https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/cart_products")
           .then((res) => res.json())
           .then((data) => setCarts(data));
       }, []);
 
     const handleDelete = id =>{
-        fetch(`http://localhost:4000/cart_products/${id}`,{
+        fetch(`https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/cart_products/${id}`,{
             method: "DELETE"
         })
             .then(res => res.json())

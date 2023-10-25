@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Brands from "../Brands/Brands";
 import FAQ from "../FAQ/FAQ";
+import Email from "../Email/Email";
 
 
 const Home = () => {
@@ -37,6 +38,12 @@ const Home = () => {
      data-aos-easing="ease-in-sine">
         <h1 className="text-center text-5xl font-bold mb-16 text-orange-400">Most Asked Questions</h1>
         <FAQ></FAQ>
+      </div>
+      <div className="container mx-auto mb-32" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+        
+        <Email></Email>
       </div>
       
     </div>

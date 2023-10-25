@@ -12,7 +12,7 @@ const Details = () => {
   const { name, image, brandName, type, price, shortDescription, rating } = selectedProduct;
 
   const handleCart = () =>{
-    fetch('http://localhost:4000/cart_products',{
+    fetch('https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/cart_products',{
       method:'POST',
       headers: {
         "content-type": "application/json"
