@@ -12,7 +12,7 @@ const Products = () => {
   //const adImages = clickedBrandProductsAd.images;
 
   const clickedBrandProducts = allProducts.filter(
-    (product) => product.brandName.toLowerCase() === name.toLowerCase()
+    (product) => product?.brandName?.toLowerCase() === name.toLowerCase()
   );
 
   const Porsche = (
