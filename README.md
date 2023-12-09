@@ -18,7 +18,14 @@ On nav-bar there is an option to see user's cart which is "My cart", by clicking
 ### Feature 6:
 User can add a new product from "Add Product" section on nav-bar
 
-
+### Live Link
 [https://brand-website-31e2e.web.app/](https://brand-website-31e2e.web.app/)
+
+## Technologies
+<p align="center"> 
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=mongo,express,react,tailwind,firebase" />
+  </a>
+</p>
 
 
