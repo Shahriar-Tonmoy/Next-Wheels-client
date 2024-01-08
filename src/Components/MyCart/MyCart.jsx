@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import SingleCart from "../SingleCart/SingleCart";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/authProvider";
 
 const MyCart = () => {
 
     const [carts, setCarts] = useState([]);
+    const { user, signOutUser } = useContext(AuthContext);
+
 
     useEffect(() => {
         fetch("https://brand-website-server-9lu7pgb34-mirza-shahriar-tonmoys-projects.vercel.app/cart_products")

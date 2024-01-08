@@ -7,7 +7,7 @@ const Nav = ({ handleToggle }) => {
   console.log(user);
   const navLinks = (
     <>
-      <div className="flex gap-8">
+      <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
         <NavLink className="text-lg font-semibold" to="/">
           Home
         </NavLink>

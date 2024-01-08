@@ -8,7 +8,7 @@ const Details = () => {
   const { id } = useParams();
   const selectedProduct = allProducts.find((pro) => pro._id == id);
   
-  const {_id, ...newSelectedPro} = selectedProduct
+  const {_id, ...newSelectedPro} = selectedProduct;
   const { name, image, brandName, type, price, shortDescription, rating } = selectedProduct;
 
   const handleCart = () =>{
